@@ -1,0 +1,16 @@
+<form method="post">
+    {% csrf_token %}
+    <label>Usuario ID:</label><br>
+    <input type="text" name="usuario_id" value="{{ request.POST.usuario_id }}"><br>
+    <label>Nombre Objeto:</label><br>
+    <input type="text" name="nombre_objeto" value="{{ request.POST.nombre_objeto }}"><br>
+    <label>Nombre Permiso:</label><br>
+    <input type="text" name="nombre_permiso" value="{{ request.POST.nombre_permiso }}"><br>
+    <input type="submit" value="Verificar Permiso">
+    {% if error %}
+    <div>
+        <strong>Error:</strong> {{ error }}
+    </div>
+{% endif %}
+
+</form>
